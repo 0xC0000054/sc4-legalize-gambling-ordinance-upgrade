@@ -53,7 +53,7 @@ Logger& Logger::GetInstance()
 {
 	static Logger logger;
 
-    return logger;
+	return logger;
 }
 
 Logger::Logger() : initialized(false), logFile(), logOptions(LogOptions::Errors)

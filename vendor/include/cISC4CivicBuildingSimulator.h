@@ -12,7 +12,7 @@ public:
 	public:
 
 		int8_t status;
-		int8_t statusPadding; // Padding for alignment. 
+		int8_t statusPadding; // Padding for alignment.
 		uint16_t buildingCount;
 		intptr_t unknown1; // Possibly a pointer to a cIGZString, but it crashes when accessing any method
 		intptr_t unknown2; // std::string, null/0 if status == -4

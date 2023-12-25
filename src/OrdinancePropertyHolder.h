@@ -69,7 +69,7 @@ public:
 	uint32_t GetGZCLSID();
 
 private:
-	
+
 	uint32_t refCount;
 	std::vector<cSCBaseProperty> properties;
 };

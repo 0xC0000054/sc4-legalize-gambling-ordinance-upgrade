@@ -111,7 +111,7 @@ SC4BuiltInOrdinanceBase::SC4BuiltInOrdinanceBase(
 	const char* description,
 	const StringResourceKey& descriptionKey,
 	uint32_t yearFirstAvailable,
-	const SC4Percentage& monthlyChance, 
+	const SC4Percentage& monthlyChance,
 	int64_t enactmentIncome,
 	int64_t retracmentIncome,
 	int64_t monthlyConstantIncome,
@@ -616,7 +616,7 @@ void SC4BuiltInOrdinanceBase::InitializeOrdinanceComponents(cISC4City* pCity)
 		{
 			pSimulator = pCity->GetSimulator();
 		}
-	}	
+	}
 
 	LoadLocalizedStringResources();
 }

@@ -188,7 +188,7 @@ public:
 		if (pCity)
 		{
 			//DumpConditionalBuildingStatus(pCity);
-			
+
 			cISC4OrdinanceSimulator* pOrdinanceSimulator = pCity->GetOrdinanceSimulator();
 
 			if (pOrdinanceSimulator)

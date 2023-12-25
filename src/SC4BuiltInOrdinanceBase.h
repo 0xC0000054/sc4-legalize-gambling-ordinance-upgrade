@@ -31,19 +31,6 @@ struct BuiltInOrdinanaceExemplarInfo
 
 class cISC4City;
 class cISC4ResidentialSimulator;
-//////////////////////////////////////////////////////////////////////////////
-//
-// This file is part of sc4-legalize-gambling-ordinance-upgrade, a DLL Plugin
-// for SimCity 4 that updates the built-in ordinance to have its income based
-// on the city's residential population.
-//
-// Copyright (c) 2023 Nicholas Hayes
-//
-// This file is licensed under terms of the MIT License.
-// See LICENSE.txt for more information.
-//
-//////////////////////////////////////////////////////////////////////////////
- 
 class cISC4Simulator;
 
 // A base class for overriding SC4's built-in ordinances.
@@ -92,7 +79,7 @@ public:
 	SC4BuiltInOrdinanceBase& operator=(SC4BuiltInOrdinanceBase&& other) noexcept;
 
 	bool QueryInterface(uint32_t riid, void** ppvObj) final;
-	
+
 	uint32_t AddRef() final;
 
 	uint32_t Release() final;
@@ -131,7 +118,7 @@ public:
 	/**
 	 * @brief Gets the in-game year that the ordinance becomes available.
 	 * @return The in-game year that the ordinance becomes available.
-	 * 
+	 *
 	 * @remarks By default the ordinances will be available at the start of the game.
 	 * This method can be overridden to set a custom start year.
 	 * Note that in SimCity 4 the in-game date starts in the year 2000.
@@ -141,7 +128,7 @@ public:
 	/**
 	 * @brief The chance that the ordinance will become available each month.
 	 * This feature is not implemented.
-	 * 
+	 *
 	 * @return The chance that the ordinance will become available each month.
 	*/
 	virtual SC4Percentage GetChanceAvailability(void) final;
@@ -179,7 +166,7 @@ public:
 	/**
 	 * @brief Gets a value that identifies the in-game advisor related to this
 	 * ordinance. This is unused in SimCity 4 and always returns zero.
-	 * @return Zero. 
+	 * @return Zero.
 	*/
 	uint32_t GetAdvisorID(void) final;
 
@@ -210,13 +197,13 @@ public:
 	bool IsIncomeOrdinance(void) final;
 
 	/**
-	 * @brief This is called during the monthly ordinance simulation. 
+	 * @brief This is called during the monthly ordinance simulation.
 	 * @return True if successful; otherwise, false.
 	*/
 	virtual bool Simulate(void);
 
 	bool SetAvailable(bool isAvailable);
-	
+
 	bool SetOn(bool isOn);
 
 	bool SetEnabled(bool isEnabled);

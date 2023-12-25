@@ -208,11 +208,11 @@ LegalizeGamblingOrdinanceUpgrade::LegalizeGamblingOrdinanceUpgrade()
 		/* income ordinance */		  true,
 		CreateDefaultOrdinanceEffects()),
 		pDemandSimulator(nullptr),
-	    baseMonthlyIncome(100),
+		baseMonthlyIncome(100),
 		residentialLowWealthIncomeFactor(0.05f),
 		residentialMedWealthIncomeFactor(0.03f),
 		residentialHighWealthIncomeFactor(0.01f),
-	    ignoreSetOnCallCount(0)
+		ignoreSetOnCallCount(0)
 {
 }
 
@@ -315,7 +315,7 @@ bool LegalizeGamblingOrdinanceUpgrade::SetOn(bool isOn)
 		}
 	}
 
-    return true;
+	return true;
 }
 
 void LegalizeGamblingOrdinanceUpgrade::InitializeOrdinanceComponents(cISC4City* pCity)

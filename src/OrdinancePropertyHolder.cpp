@@ -140,8 +140,8 @@ namespace
 		return value;
 	}
 
-    void LogPropertyId(const char* methodName, uint32_t propertyId)
-    {
+	void LogPropertyId(const char* methodName, uint32_t propertyId)
+	{
 		Logger& logger = Logger::GetInstance();
 
 		const char* propertyDescription = GetPropertyDescription(propertyId);
@@ -163,7 +163,7 @@ namespace
 				methodName,
 				propertyId);
 		}
-    }
+	}
 }
 
 OrdinancePropertyHolder::OrdinancePropertyHolder()
@@ -217,13 +217,13 @@ OrdinancePropertyHolder& OrdinancePropertyHolder::operator=(OrdinancePropertyHol
 
 bool OrdinancePropertyHolder::QueryInterface(uint32_t riid, void** ppvObj)
 {
-    if (riid == GZIID_OrdinancePropertyHolder)
-    {
+	if (riid == GZIID_OrdinancePropertyHolder)
+	{
 		AddRef();
-        *ppvObj = this;
+		*ppvObj = this;
 
-        return true;
-    }
+		return true;
+	}
 	else if (riid == GZIID_cISCPropertyHolder)
 	{
 		AddRef();
@@ -238,35 +238,35 @@ bool OrdinancePropertyHolder::QueryInterface(uint32_t riid, void** ppvObj)
 
 		return true;
 	}
-    else if (riid == GZIID_cIGZUnknown)
-    {
+	else if (riid == GZIID_cIGZUnknown)
+	{
 		AddRef();
-        *ppvObj = static_cast<cIGZUnknown*>(static_cast<cISCPropertyHolder*>(this));
+		*ppvObj = static_cast<cIGZUnknown*>(static_cast<cISCPropertyHolder*>(this));
 
-        return true;
-    }
+		return true;
+	}
 
-    return false;
+	return false;
 }
 
 uint32_t OrdinancePropertyHolder::AddRef()
 {
-    return ++refCount;
+	return ++refCount;
 }
 
 uint32_t OrdinancePropertyHolder::Release()
 {
-    if (refCount > 0)
-    {
-        --refCount;
-    }
+	if (refCount > 0)
+	{
+		--refCount;
+	}
 
-    return refCount;
+	return refCount;
 }
 
 bool OrdinancePropertyHolder::HasProperty(uint32_t dwProperty)
 {
-    LogPropertyId(__FUNCTION__, dwProperty);
+	LogPropertyId(__FUNCTION__, dwProperty);
 
 	for (const auto& property : properties)
 	{
@@ -276,17 +276,17 @@ bool OrdinancePropertyHolder::HasProperty(uint32_t dwProperty)
 		}
 	}
 
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::GetPropertyList(cIGZUnknownList** ppList)
 {
-    return false;
+	return false;
 }
 
 cISCProperty* OrdinancePropertyHolder::GetProperty(uint32_t dwProperty)
 {
-    LogPropertyId(__FUNCSIG__, dwProperty);
+	LogPropertyId(__FUNCSIG__, dwProperty);
 
 	for (auto& property : properties)
 	{
@@ -299,12 +299,12 @@ cISCProperty* OrdinancePropertyHolder::GetProperty(uint32_t dwProperty)
 		}
 	}
 
-    return nullptr;
+	return nullptr;
 }
 
 bool OrdinancePropertyHolder::GetProperty(uint32_t dwProperty, uint32_t& dwValueOut)
 {
-    LogPropertyId(__FUNCSIG__, dwProperty);
+	LogPropertyId(__FUNCSIG__, dwProperty);
 
 	bool result = false;
 
@@ -324,23 +324,23 @@ bool OrdinancePropertyHolder::GetProperty(uint32_t dwProperty, uint32_t& dwValue
 
 bool OrdinancePropertyHolder::GetProperty(uint32_t dwProperty, cIGZString& szValueOut)
 {
-    LogPropertyId(__FUNCSIG__, dwProperty);
+	LogPropertyId(__FUNCSIG__, dwProperty);
 
 	return false;
 }
 
 bool OrdinancePropertyHolder::GetProperty(uint32_t dwProperty, uint32_t riid, void** ppvObj)
 {
-    LogPropertyId(__FUNCSIG__, dwProperty);
+	LogPropertyId(__FUNCSIG__, dwProperty);
 
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::GetProperty(uint32_t dwProperty, void* pUnknown, uint32_t& dwUnknownOut)
 {
-    LogPropertyId(__FUNCSIG__, dwProperty);
+	LogPropertyId(__FUNCSIG__, dwProperty);
 
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::AddProperty(cISCProperty* pProperty, bool bUnknown)
@@ -351,13 +351,13 @@ bool OrdinancePropertyHolder::AddProperty(cISCProperty* pProperty, bool bUnknown
 		return true;
 	}
 
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, cIGZVariant const* pVariant, bool bUnknown)
 {
 	properties.push_back(cSCBaseProperty(dwProperty, pVariant));
-    return true;
+	return true;
 }
 
 bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, uint32_t dwValue, bool bUnknown)
@@ -368,7 +368,7 @@ bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, uint32_t dwValue,
 
 bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, cIGZString const& szValue)
 {
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, int32_t lValue, bool bUnknown)
@@ -379,7 +379,7 @@ bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, int32_t lValue, b
 
 bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, void* pUnknown, uint32_t dwUnknown, bool bUnknown)
 {
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, float value)
@@ -390,7 +390,7 @@ bool OrdinancePropertyHolder::AddProperty(uint32_t dwProperty, float value)
 
 bool OrdinancePropertyHolder::CopyAddProperty(cISCProperty* pProperty, bool bUnknown)
 {
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::RemoveProperty(uint32_t dwProperty)
@@ -404,13 +404,13 @@ bool OrdinancePropertyHolder::RemoveProperty(uint32_t dwProperty)
 		}
 	}
 
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::RemoveAllProperties(void)
 {
 	properties.clear();
-    return true;
+	return true;
 }
 
 bool OrdinancePropertyHolder::EnumProperties(FunctionPtr1 pFunction1, void* pData)
@@ -424,17 +424,17 @@ bool OrdinancePropertyHolder::EnumProperties(FunctionPtr1 pFunction1, void* pDat
 		pFunction1(property, pData);
 	}
 
-    return true;
+	return true;
 }
 
 bool OrdinancePropertyHolder::EnumProperties(FunctionPtr2 pFunction2, FunctionPtr1 pFunctionPipe)
 {
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::CompactProperties(void)
 {
-    return false;
+	return false;
 }
 
 bool OrdinancePropertyHolder::Write(cIGZOStream& stream)
