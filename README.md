@@ -1,6 +1,6 @@
 # sc4-legalize-gambling-ordinance-upgrade
 
-A DLL Plugin for SimCity 4 that updates the built-in Legalized Gambling ordinance to have its income based on the city's residential population.
+A DLL Plugin for SimCity 4 that updates the built-in Legalize Gambling ordinance to have its income based on the city's residential population.
 
 **Availability Requirements:** None.    
 **Income:** Base income of §250/month, plus additional income based on the residential wealth group populations.    
@@ -8,7 +8,7 @@ A DLL Plugin for SimCity 4 that updates the built-in Legalized Gambling ordinanc
 
 Crime Effect: +20%.
 
-This ordinance replaces the game's built-in Legalized Gambling ordinance, it is incompatible with any mod that alters the built-in ordinance.
+This ordinance replaces the game's built-in Legalize Gambling ordinance, it is incompatible with any mod that alters the built-in ordinance.
 This mod ignores the ordinance Exemplar and only uses the LTEXT files from the built-in ordinance.
 
 The plugin can be downloaded from the Releases tab: https://github.com/0xC0000054/sc4-legalize-gambling-ordinance-upgrade/releases
